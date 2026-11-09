@@ -207,6 +207,88 @@ table.g tr:hover td{background:var(--bg2)}
 .mod-name{font-size:.87rem;font-weight:800;margin-bottom:3px;line-height:1.2;color:var(--text)}
 .mod-desc{font-size:.7rem;color:var(--text2);line-height:1.4}.change-lv-btn{display:block;width:calc(100% - 32px);margin:16px auto 24px;background:var(--bg3);color:var(--text2);padding:11px;border-radius:var(--rsm);font-size:.82rem;font-weight:600;border:none;cursor:pointer}
 .change-lv-btn:hover{background:var(--bg2);color:var(--text)}
+
+/* ══════════════════ ESP115 SECTION ══════════════════ */
+.esp-section{width:100%;max-width:520px;padding:0 16px 48px}
+.esp-divider{display:flex;align-items:center;gap:12px;margin-bottom:16px}
+.esp-divider-line{flex:1;height:1px;background:rgba(255,255,255,.07)}
+.esp-divider-label{font-size:.65rem;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.25);white-space:nowrap}
+.esp-games-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.esp-game-card{background:linear-gradient(150deg,#111526,#0d1020);border:1px solid rgba(255,255,255,.05);border-top:2.5px solid var(--gc,#4f8ef7);border-radius:14px;padding:14px;cursor:pointer;text-align:left;transition:all .2s;display:flex;flex-direction:column;gap:4px}
+.esp-game-card:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(0,0,0,.5)}
+.esp-game-card:active{transform:scale(.97)}
+.esp-game-card.master-card{grid-column:1/-1;border-top:2.5px solid transparent;background:linear-gradient(135deg,#1a1040,#0a1a30) padding-box,linear-gradient(90deg,#7c6af7,#f59e0b) border-box}
+.gc-emoji{font-size:1.5rem;line-height:1;margin-bottom:4px;display:block}
+.gc-level{font-size:.6rem;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--gc,#4f8ef7);opacity:.8}
+.gc-title{font-size:.82rem;font-weight:700;color:var(--text)}
+.gc-desc{font-size:.68rem;color:var(--text2);line-height:1.4;margin-top:2px}
+/* ══════════════════ GAME SCREEN ══════════════════ */
+#s-game .game-nav{display:flex;align-items:center;gap:10px;padding:12px 16px;background:rgba(0,0,0,.3);border-bottom:1px solid rgba(255,255,255,.06)}
+.game-back{background:rgba(255,255,255,.06);color:var(--text2);padding:6px 12px;border-radius:8px;font-size:.8rem;border:none;cursor:pointer}
+.game-hearts{display:flex;gap:4px;font-size:1rem}
+.game-score-badge{background:rgba(255,255,255,.08);color:var(--text);font-size:.75rem;font-weight:700;padding:4px 10px;border-radius:20px;margin-left:auto}
+.game-progress-wrap{padding:10px 16px 6px;background:rgba(0,0,0,.15)}
+.game-progress-bar{height:6px;background:rgba(255,255,255,.08);border-radius:99px;overflow:hidden}
+.game-progress-fill{height:100%;border-radius:99px;background:var(--gc,var(--green));transition:width .4s ease}
+.game-progress-label{font-size:.65rem;color:var(--text2);margin-top:5px}
+.game-body{flex:1;overflow-y:auto;padding:16px}
+.game-question-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:14px;padding:18px;margin-bottom:14px}
+.game-q-tag{font-size:.65rem;font-weight:700;letter-spacing:.8px;text-transform:uppercase;color:var(--gc,var(--green));margin-bottom:8px}
+.game-q-text{font-size:1rem;font-weight:700;line-height:1.4;color:var(--text)}
+.game-opts{display:flex;flex-direction:column;gap:8px}
+.game-opt{padding:13px 16px;background:rgba(255,255,255,.04);border:1.5px solid rgba(255,255,255,.08);border-radius:12px;font-size:.88rem;font-weight:600;color:var(--text);cursor:pointer;text-align:left;transition:all .15s}
+.game-opt:hover:not(.disabled){border-color:var(--gc,var(--green));background:rgba(255,255,255,.08)}
+.game-opt.selected{border-color:var(--gc,var(--green));background:color-mix(in srgb,var(--gc,var(--green)) 15%,transparent)}
+.game-opt.correct{border-color:#2dd4a0;background:rgba(45,212,160,.15);color:#2dd4a0;pointer-events:none}
+.game-opt.wrong{border-color:#f4607a;background:rgba(244,96,122,.12);color:#f4a0b0;pointer-events:none}
+.game-opt.disabled{opacity:.4;pointer-events:none}
+.game-tf{display:flex;gap:10px}
+.game-tf-btn{flex:1;padding:18px;border-radius:14px;border:1.5px solid rgba(255,255,255,.1);background:rgba(255,255,255,.04);font-size:1.1rem;font-weight:800;cursor:pointer;transition:all .15s}
+.game-tf-btn.t-btn:hover{border-color:#2dd4a0;background:rgba(45,212,160,.1);color:#2dd4a0}
+.game-tf-btn.f-btn:hover{border-color:#f4607a;background:rgba(244,96,122,.1);color:#f4607a}
+.game-tf-btn.correct{border-color:#2dd4a0;background:rgba(45,212,160,.15);color:#2dd4a0;pointer-events:none}
+.game-tf-btn.wrong{border-color:#f4607a;background:rgba(244,96,122,.12);color:#f4607a;pointer-events:none}
+.game-tf-btn.dim{opacity:.2;pointer-events:none}
+.game-hint{font-size:.8rem;padding:10px 14px;border-radius:10px;margin-top:10px;line-height:1.5;display:none}
+.game-hint.ok{background:rgba(45,212,160,.08);color:#2dd4a0;border:1px solid rgba(45,212,160,.2);display:block}
+.game-hint.bad{background:rgba(244,96,122,.08);color:#f4a0b0;border:1px solid rgba(244,96,122,.2);display:block}
+.game-next-btn{width:100%;padding:14px;border-radius:12px;border:none;background:var(--gc,var(--green));color:#000;font-size:.9rem;font-weight:800;cursor:pointer;margin-top:12px;display:none;transition:opacity .15s}
+.game-next-btn:hover{opacity:.85}
+/* Game Over */
+.game-over{display:flex;flex-direction:column;align-items:center;text-align:center;padding:36px 20px;gap:12px}
+.game-over-emoji{font-size:4rem;line-height:1}
+.game-over-title{font-size:1.5rem;font-weight:900}
+.game-over-sub{font-size:.85rem;color:var(--text2)}
+.game-score-ring{position:relative;width:110px;height:110px;margin:8px auto}
+.game-score-ring svg{transform:rotate(-90deg)}
+.game-score-ring-text{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.game-score-pct{font-size:1.6rem;font-weight:900;color:var(--gc,var(--green))}
+.game-score-lbl{font-size:.65rem;color:var(--text2)}
+.game-action-btns{display:flex;flex-direction:column;gap:8px;width:100%;max-width:280px}
+.game-btn-primary{padding:13px;border-radius:12px;border:none;background:var(--gc,var(--green));color:#000;font-size:.88rem;font-weight:800;cursor:pointer}
+.game-btn-secondary{padding:12px;border-radius:12px;border:1px solid rgba(255,255,255,.1);background:transparent;color:var(--text2);font-size:.85rem;font-weight:600;cursor:pointer}
+/* Streak */
+@keyframes streak-pop{0%{transform:scale(0) rotate(-10deg);opacity:0}60%{transform:scale(1.3) rotate(3deg)}100%{transform:scale(1);opacity:1}}
+.streak-badge{position:fixed;top:80px;left:50%;transform:translateX(-50%);background:linear-gradient(90deg,#f59e0b,#ef4444);color:#fff;padding:8px 18px;border-radius:99px;font-size:.85rem;font-weight:800;z-index:999;pointer-events:none;animation:streak-pop .4s ease both}
+
+
+/* ═══ ESP115 MODULE LESSONS ═══ */
+.esp-intro-block{margin-bottom:20px;padding:14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:12px}
+.esp-intro-text{font-size:.78rem;color:var(--text2);line-height:1.6;margin-bottom:10px}
+.esp-intro-tags{display:flex;flex-wrap:wrap;gap:6px}
+.esp-tag{font-size:.62rem;font-weight:700;letter-spacing:.5px;color:var(--text2);background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);border-radius:20px;padding:3px 9px}
+.esp-mod-block{margin-bottom:18px}
+.esp-mod-hdr{display:flex;align-items:center;gap:8px;margin-bottom:10px;padding:8px 10px;border-radius:10px;background:rgba(255,255,255,.03)}
+.esp-mod-num{font-size:.6rem;font-weight:900;letter-spacing:1px;text-transform:uppercase;color:var(--mc,#4f8ef7);background:rgba(255,255,255,.06);padding:3px 7px;border-radius:20px}
+.esp-mod-name{font-size:.78rem;font-weight:700;color:var(--text1)}
+.esp-mod-lessons{display:flex;flex-direction:column;gap:6px;margin-bottom:6px}
+.esp-lcard{background:var(--card);border:1px solid var(--border);border-top:2px solid var(--mc,#4f8ef7);border-radius:var(--rsm);padding:12px 10px;cursor:pointer;text-align:left;transition:all .15s;display:flex;flex-direction:row;align-items:center;gap:12px}
+.esp-lcard:hover{background:var(--card2);border-color:var(--mc,#4f8ef7);transform:translateY(-1px)}
+.esp-lcard-icon{font-size:1.1rem}
+.esp-lcard-id{font-size:.55rem;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--mc,#4f8ef7)}
+.esp-lcard-title{font-size:.72rem;font-weight:700;color:var(--text);line-height:1.3;margin-top:1px}
+.esp-lcard-body{display:flex;flex-direction:column;gap:1px;flex:1}
+.esp-games-lbl{font-size:.6rem;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.2);margin:14px 0 10px;text-align:center}
 </style>
 </head>
 <body>
@@ -219,6 +301,25 @@ table.g tr:hover td{background:var(--bg2)}
     <p>Elige tu nivel y empieza tu camino</p>
   </div>
   <div class="level-list" id="level-list"></div>
+  <div class="esp-section">
+    <div class="esp-divider">
+      <div class="esp-divider-line"></div>
+      <div class="esp-divider-label">✦ ESP115 · Inglés para Diseño</div>
+      <div class="esp-divider-line"></div>
+    </div>
+    <div class="esp-intro-block">
+      <p class="esp-intro-text">Curso de inglés técnico para estudiantes de diseño. Aprende el vocabulario, las frases profesionales y la comunicación en inglés que necesitas en el mundo del diseño — desde presentar tu portafolio hasta trabajar con clientes internacionales.</p>
+      <div class="esp-intro-tags">
+        <span class="esp-tag">&#127919; 3 módulos</span>
+        <span class="esp-tag">&#128218; 9 lecciones</span>
+        <span class="esp-tag">&#9889; 6 juegos CEFR</span>
+        <span class="esp-tag">&#127891; Duoc UC · ESP115</span>
+      </div>
+    </div>
+    <div id="esp-modules-wrap"></div>
+    <div class="esp-games-lbl">⚡ Practica por Nivel CEFR</div>
+    <div class="esp-games-grid" id="esp-games-grid"></div>
+  </div>
 </div>
 
 <!-- MAIN MENU -->
@@ -268,6 +369,21 @@ table.g tr:hover td{background:var(--bg2)}
     <div id="learn-c" class="lb-body"></div>
     <div id="prac-c" class="pb-body" style="display:none"></div>
   </div>
+</div>
+
+
+<!-- ═══════════════ ESP115 GAME SCREEN ═══════════════ -->
+<div id="s-game" class="screen" style="background:#090c14">
+  <div class="game-nav">
+    <button class="game-back" onclick="exitGame()">← Salir</button>
+    <div class="game-hearts" id="game-hearts"></div>
+    <div class="game-score-badge" id="game-score-badge">0 pts</div>
+  </div>
+  <div class="game-progress-wrap">
+    <div class="game-progress-bar"><div class="game-progress-fill" id="game-progress-fill" style="width:0%"></div></div>
+    <div class="game-progress-label" id="game-progress-label">Pregunta 1 de 10</div>
+  </div>
+  <div class="game-body" id="game-body"></div>
 </div>
 
 <script>
@@ -2266,6 +2382,445 @@ exercises:[
    exp:'✅ HAD a great time — disfrutar es una experiencia. Have a great time = pasarla genial.'}
 ]}
 
+,
+'esp1a':{id:'esp1a',icon:'&#127912;',title:'Types of Designers',sub:'Design fields in English',level:[],
+theory:[
+  {type:'intro',
+   title:'ESP1A — Design Professions',
+   body:'In professional English, each design field has a specific name. Knowing these terms helps you understand job postings, write your CV, and introduce yourself to clients.',
+   es:'En inglés profesional, cada campo del diseño tiene un nombre específico. Conocer estos términos te ayuda a entender avisos de trabajo, escribir tu CV y presentarte ante clientes.'},
+  {type:'table-2col',title:'Design Fields',
+   cols:['Field','What they design'],
+   rows:[
+    {c1:'Industrial Designer',c2:'Products, furniture, appliances'},
+    {c1:'Graphic Designer',c2:'Visual communication, logos, layouts'},
+    {c1:'Environmental Designer',c2:'Public spaces, exhibitions, signage'},
+    {c1:'Interior Designer',c2:'Indoor spaces, architecture, décor'},
+    {c1:'UX / UI Designer',c2:'Digital interfaces, user experience'},
+    {c1:'Fashion Designer',c2:'Clothing, accessories, textiles'}
+   ]},
+  {type:'notes',title:'Key Vocabulary',
+   items:['client — the person or company you work for',
+          'brief — a written description of what the client needs',
+          'prototype — an early model of a product for testing',
+          'deadline — the final date to deliver your work',
+          'feedback — comments to help you improve your work'],
+   es:'client = cliente, brief = descripción del proyecto, prototype = modelo de prueba, deadline = fecha límite, feedback = retroalimentación.'},
+  {type:'examples',title:'Professional Sentences',items:[
+    {en:'I am an industrial designer specializing in furniture.',es:'Soy diseñador/a industrial especializado/a en muebles.'},
+    {en:'The client approved our prototype last Friday.',es:'El cliente aprobó nuestro prototipo el viernes pasado.'},
+    {en:'We need to meet the deadline for the product brief.',es:'Necesitamos cumplir el plazo del brief del producto.'},
+    {en:'Can you send your portfolio and a cover letter?',es:'¿Puedes enviar tu portafolio y una carta de presentación?'}
+  ]}
+],
+exercises:[
+  {type:'fill',prompt:'A ___ designer creates logos and visual communication.',word:'Graphic',opts:['Graphic','Industrial','Fashion','Interior'],
+   exp:'"Graphic designer" works with visual communication, logos and layouts.'},
+  {type:'fill',prompt:'The written description of a project is called a ___.',word:'brief',opts:['brief','deadline','prototype','feedback'],
+   exp:'A "brief" is the written description of what the client needs from you.'},
+  {type:'fill',prompt:'An early model of a product made for testing is a ___.',word:'prototype',opts:['prototype','portfolio','feedback','deadline'],
+   exp:'A "prototype" is a test model built before the final product goes into production.'},
+  {type:'choice',prompt:'What does "deadline" mean?',word:'The final date to deliver your work',opts:['A design mistake','The final date to deliver your work','A client presentation','A type of software'],
+   exp:'"Deadline" is the final date by which you must complete and deliver your work.'},
+  {type:'choice',prompt:'Which designer works on PUBLIC spaces and signage?',word:'Environmental Designer',opts:['Industrial Designer','Environmental Designer','Interior Designer','UX Designer'],
+   exp:'"Environmental Designer" designs public spaces, exhibitions, and signage systems.'},
+  {type:'build',structure:'Subject + Verb + Object',
+   parts:[{l:'Subject',v:'I'},{l:'Verb',v:'am'},{l:'Object',v:'a graphic designer'}],
+   tiles:['I','am','a','graphic','designer','industrial','fashion'],
+   answer:'I am a graphic designer',
+   exp:'Subject (I) + Verb (am) + Object (a graphic designer) = professional self-introduction.'}
+]},
+
+'esp1b':{id:'esp1b',icon:'&#128295;',title:'The Design Process',sub:'5 steps in professional English',level:[],
+theory:[
+  {type:'intro',
+   title:'ESP1B — The Design Process',
+   body:'Every design project follows a process. In professional contexts, you need to explain each step clearly in English. The 5 key stages are: Define, Research, Ideate, Prototype, and Test.',
+   es:'Todo proyecto de diseño sigue un proceso. En contextos profesionales, necesitas explicar cada etapa con claridad en inglés.'},
+  {type:'table-2col',title:'The 5 Stages',
+   cols:['Stage','What you do'],
+   rows:[
+    {c1:'1. Define',c2:'Identify the problem and set the brief'},
+    {c1:'2. Research',c2:'Analyze the user, market, and competitors'},
+    {c1:'3. Ideate',c2:'Brainstorm and generate multiple ideas'},
+    {c1:'4. Prototype',c2:'Build a physical or digital test model'},
+    {c1:'5. Test',c2:'Evaluate the prototype with real users'}
+   ]},
+  {type:'notes',title:'Key Verbs for Each Stage',
+   items:['Define: identify, analyze, establish, determine',
+          'Research: investigate, survey, compare, document',
+          'Ideate: brainstorm, sketch, explore, generate',
+          'Prototype: build, model, create, develop',
+          'Test: evaluate, measure, observe, refine'],
+   es:'Verbos clave: identify = identificar, brainstorm = lluvia de ideas, prototype = crear un prototipo, evaluate = evaluar, refine = refinar/mejorar.'},
+  {type:'examples',title:'Describing Each Stage',items:[
+    {en:'First, we define the problem and establish the project brief.',es:'Primero, definimos el problema y establecemos el brief del proyecto.'},
+    {en:'We research the target user and analyze the competition.',es:'Investigamos al usuario objetivo y analizamos la competencia.'},
+    {en:'In the ideation stage, we brainstorm at least 20 ideas.',es:'En la etapa de ideación, hacemos lluvia de ideas de al menos 20 conceptos.'},
+    {en:'We build a prototype to test the concept with real users.',es:'Construimos un prototipo para probar el concepto con usuarios reales.'}
+  ]}
+],
+exercises:[
+  {type:'fill',prompt:'The first step of the design process is to ___ the problem.',word:'define',opts:['define','prototype','test','sketch'],
+   exp:'The first stage is "Define": you identify and clearly state the problem to solve.'},
+  {type:'fill',prompt:'In the ___ stage, you build a test model.',word:'Prototype',opts:['Prototype','Research','Define','Ideate'],
+   exp:'The "Prototype" stage involves building a physical or digital model to test your concept.'},
+  {type:'fill',prompt:'To ___ means to generate many ideas quickly without judgment.',word:'brainstorm',opts:['brainstorm','evaluate','document','refine'],
+   exp:'"Brainstorm" means generating many ideas quickly. It is the core activity of the Ideate stage.'},
+  {type:'choice',prompt:'What do you do in the RESEARCH stage?',word:'Analyze the user, market, and competitors',opts:['Build a test model','Analyze the user, market, and competitors','Identify the problem','Present the final design'],
+   exp:'In the Research stage, you investigate the user, the market context, and what competitors are doing.'},
+  {type:'choice',prompt:'After testing, if results are poor, you should ___.',word:'refine the prototype',opts:['stop the project','refine the prototype','skip to delivery','change the client'],
+   exp:'"Refine" means improve and adjust. After testing, you iterate and improve the design before final delivery.'},
+  {type:'build',structure:'Subject + Verb + Object + Prep Phrase',
+   parts:[{l:'Subject',v:'We'},{l:'Verb',v:'build'},{l:'Object',v:'a prototype'},{l:'Prep',v:'to test the concept'}],
+   tiles:['We','build','a','prototype','to','test','the','concept','evaluate','design'],
+   answer:'We build a prototype to test the concept',
+   exp:'We (Subject) + build (Verb) + a prototype (Object) + to test the concept (Purpose) = design process sentence.'}
+]},
+
+'esp1c':{id:'esp1c',icon:'&#128221;',title:'Design Vocabulary',sub:'Terms for materials, shape and function',level:[],
+theory:[
+  {type:'intro',
+   title:'ESP1C — Design Language',
+   body:'Design professionals need to describe their work precisely. This lesson covers vocabulary for materials, shapes, visual properties, and functions — essential for presentations and client meetings.',
+   es:'Los profesionales del diseño necesitan describir su trabajo con precisión. Esta lección cubre vocabulario de materiales, formas, propiedades visuales y funciones.'},
+  {type:'table-2col',title:'Materials',
+   cols:['Material','Example use'],
+   rows:[
+    {c1:'steel / stainless steel',c2:'appliances, furniture frames'},
+    {c1:'timber / plywood',c2:'furniture, interior finishes'},
+    {c1:'polypropylene (PP)',c2:'chairs, packaging'},
+    {c1:'ABS plastic',c2:'electronic housings, toys'},
+    {c1:'aluminium',c2:'lightweight structures, transport'},
+    {c1:'recycled materials',c2:'sustainable product design'}
+   ]},
+  {type:'table-2col',title:'Describing Shape and Appearance',
+   cols:['Adjective','Meaning'],
+   rows:[
+    {c1:'ergonomic',c2:'designed to fit the human body comfortably'},
+    {c1:'minimalist',c2:'simple, using few elements'},
+    {c1:'modular',c2:'made of interchangeable units'},
+    {c1:'sleek',c2:'smooth and visually elegant'},
+    {c1:'durable',c2:'strong and long-lasting'},
+    {c1:'versatile',c2:'suitable for many uses'}
+   ]},
+  {type:'examples',title:'Describing a Product',items:[
+    {en:'This chair is made of recycled polypropylene and steel.',es:'Esta silla está hecha de polipropileno reciclado y acero.'},
+    {en:'The design is minimalist and highly ergonomic.',es:'El diseño es minimalista y muy ergonómico.'},
+    {en:'We chose aluminium for its lightweight and durable properties.',es:'Elegimos el aluminio por sus propiedades livianas y duraderas.'},
+    {en:'The modular system allows users to configure their own space.',es:'El sistema modular permite a los usuarios configurar su propio espacio.'}
+  ]}
+],
+exercises:[
+  {type:'fill',prompt:'A product designed to fit the human body comfortably is ___.',word:'ergonomic',opts:['ergonomic','modular','sleek','durable'],
+   exp:'"Ergonomic" describes products shaped to fit and support the human body comfortably.'},
+  {type:'fill',prompt:'ABS plastic is commonly used for electronic ___ and toys.',word:'housings',opts:['housings','frames','frames','joints'],
+   exp:'ABS plastic is used for "housings" — the outer shells of electronic devices and toys.'},
+  {type:'fill',prompt:'A ___ system is made of interchangeable units.',word:'modular',opts:['modular','sleek','ergonomic','minimalist'],
+   exp:'"Modular" describes a system made of separate interchangeable units that can be rearranged.'},
+  {type:'choice',prompt:'Which material is best for LIGHTWEIGHT structures?',word:'aluminium',opts:['timber','ABS plastic','aluminium','stainless steel'],
+   exp:'Aluminium is prized for being lightweight while remaining strong — ideal for transport and structural applications.'},
+  {type:'choice',prompt:'What does "durable" mean?',word:'Strong and long-lasting',opts:['Flexible and soft','Strong and long-lasting','Colorful and bright','Thin and transparent'],
+   exp:'"Durable" means the material or product is strong and will last a long time under normal use.'},
+  {type:'build',structure:'Subject + Verb + Material + for + Properties',
+   parts:[{l:'Subject',v:'We'},{l:'Verb',v:'chose'},{l:'Material',v:'aluminium'},{l:'Prep',v:'for its properties'}],
+   tiles:['We','chose','aluminium','for','its','lightweight','properties','timber','steel'],
+   answer:'We chose aluminium for its lightweight properties',
+   exp:'We (Subject) + chose (Verb) + aluminium (Material) + for its lightweight properties (Reason) = material justification.'}
+]},
+
+'esp2a':{id:'esp2a',icon:'&#128222;',title:'Phone & Email',sub:'Professional communication in English',level:[],
+theory:[
+  {type:'intro',
+   title:'ESP2A — Phone Calls and Emails',
+   body:'In a professional environment, you need standard phrases for phone calls and emails. Using the right language sounds polite and competent to English-speaking clients and colleagues.',
+   es:'En el entorno profesional, necesitas frases estándar para llamadas y correos. Usar el lenguaje correcto suena educado y competente con clientes y colegas de habla inglesa.'},
+  {type:'table-2col',title:'Phone Call Phrases',
+   cols:['Situation','Phrase'],
+   rows:[
+    {c1:'Answering',c2:'Good morning, Design Studio, how can I help you?'},
+    {c1:'Introducing yourself',c2:'This is Ana calling from Studio X.'},
+    {c1:'Asking for someone',c2:'Could I speak to Mr. Torres, please?'},
+    {c1:'Line busy / unavailable',c2:'I\'m afraid he is not available right now.'},
+    {c1:'Taking a message',c2:'Can I take a message for you?'},
+    {c1:'Ending the call',c2:'Thank you for calling. We\'ll be in touch soon.'}
+   ]},
+  {type:'table-2col',title:'Email Phrases',
+   cols:['Part of email','Example phrase'],
+   rows:[
+    {c1:'Opening',c2:'I am writing to inquire about the design brief.'},
+    {c1:'Reason',c2:'I would like to follow up on our last meeting.'},
+    {c1:'Request',c2:'Could you please send me the updated files?'},
+    {c1:'Attachment',c2:'Please find the proposal attached.'},
+    {c1:'Closing',c2:'I look forward to hearing from you.'},
+    {c1:'Sign-off',c2:'Best regards / Kind regards + your name'}
+   ]},
+  {type:'examples',title:'Listen and Repeat',items:[
+    {en:'I\'m afraid he is not available right now. Can I take a message?',es:'Me temo que no está disponible en este momento. ¿Puedo tomar un mensaje?'},
+    {en:'Could you please send me the updated brief by Friday?',es:'¿Podría enviarme el brief actualizado para el viernes?'},
+    {en:'Please find our portfolio attached to this email.',es:'Por favor encontrará nuestro portafolio adjunto a este correo.'},
+    {en:'I look forward to meeting with you next week.',es:'Espero reunirme con usted la próxima semana.'}
+  ]}
+],
+exercises:[
+  {type:'fill',prompt:'To answer the phone professionally: "Good morning, ___ can I help you?"',word:'how',opts:['how','what','where','when'],
+   exp:'"Good morning, [Company name], how can I help you?" is the standard professional phone greeting.'},
+  {type:'fill',prompt:'"I\'m afraid he is not ___." — this means he is not free to talk.',word:'available',opts:['available','here','ready','in'],
+   exp:'"Available" is the professional word meaning free or able to speak. "I\'m afraid" softens the refusal politely.'},
+  {type:'fill',prompt:'At the end of an email: "I look forward to ___ from you."',word:'hearing',opts:['hearing','seeing','receiving','getting'],
+   exp:'"I look forward to hearing from you" is the standard professional email closing phrase.'},
+  {type:'choice',prompt:'How do you START a professional email?',word:'I am writing to inquire about the design brief.',opts:['Hey, what\'s up?','I am writing to inquire about the design brief.','Please help me.','Dear friend,'],
+   exp:'Professional emails start with a formal phrase like "I am writing to..." followed by the reason for your message.'},
+  {type:'choice',prompt:'To politely ask for something in an email, use:',word:'Could you please send me the files?',opts:['Give me the files.','Could you please send me the files?','I need the files now.','Send files.'],
+   exp:'"Could you please..." is a polite request form. Always use it when asking clients or colleagues for something.'},
+  {type:'build',structure:'Opening + Reason + Request',
+   parts:[{l:'Opening',v:'I am writing'},{l:'Reason',v:'to follow up'},{l:'Object',v:'on our meeting'}],
+   tiles:['I','am','writing','to','follow','up','on','our','meeting','last','inquiry'],
+   answer:'I am writing to follow up on our meeting',
+   exp:'I am writing (Opening) + to follow up (Reason) + on our meeting (Object) = professional email opener.'}
+]},
+
+'esp2b':{id:'esp2b',icon:'&#128101;',title:'Meetings & Presentations',sub:'Formal language for professional events',level:[],
+theory:[
+  {type:'intro',
+   title:'ESP2B — Meetings & Presentations',
+   body:'Design professionals attend client meetings and present their work regularly. Having the right phrases for opening, participating, and closing a meeting is essential for professional English.',
+   es:'Los diseñadores asisten a reuniones con clientes y presentan su trabajo regularmente. Tener las frases correctas para abrir, participar y cerrar una reunión es esencial.'},
+  {type:'table-2col',title:'Meeting Phrases',
+   cols:['Function','Phrase'],
+   rows:[
+    {c1:'Opening a meeting',c2:'It is a pleasure to welcome you today.'},
+    {c1:'Setting the agenda',c2:'The purpose of today\'s meeting is to discuss...'},
+    {c1:'Giving the floor',c2:'I\'d like to hand over to Ana, who will present...'},
+    {c1:'Asking for opinions',c2:'What do you think about this approach?'},
+    {c1:'Agreeing',c2:'I agree with that point entirely.'},
+    {c1:'Disagreeing politely',c2:'I see your point, but I would suggest...'},
+    {c1:'Summarizing',c2:'To summarize, we have agreed to...'},
+    {c1:'Closing',c2:'Thank you all for attending. We will be in touch.'}
+   ]},
+  {type:'notes',title:'Presentation Language',
+   items:['Starting: "Today I will present our proposal for..."',
+          'Moving on: "Now let\'s look at the second section..."',
+          'Highlighting: "I would like to draw your attention to..."',
+          'Referring to visuals: "As you can see in this slide..."',
+          'Inviting questions: "I am happy to take any questions now."'],
+   es:'Frases de presentación: Today I will present = Hoy presentaré, As you can see = Como pueden ver, I am happy to take questions = Con gusto responderé preguntas.'},
+  {type:'examples',title:'In Context',items:[
+    {en:'It is a pleasure to welcome you to our studio today.',es:'Es un placer darles la bienvenida a nuestro estudio hoy.'},
+    {en:'Today I will present our design proposal for the new product line.',es:'Hoy presentaré nuestra propuesta de diseño para la nueva línea de productos.'},
+    {en:'As you can see in this slide, the prototype passed all user tests.',es:'Como pueden ver en esta diapositiva, el prototipo pasó todas las pruebas de usuario.'},
+    {en:'I am happy to take any questions at the end of the presentation.',es:'Con gusto responderé preguntas al final de la presentación.'}
+  ]}
+],
+exercises:[
+  {type:'fill',prompt:'"It is a pleasure to ___ you today." — said at the start of a meeting.',word:'welcome',opts:['welcome','see','meet','greet'],
+   exp:'"It is a pleasure to welcome you today" is the formal opening phrase for a professional meeting.'},
+  {type:'fill',prompt:'"The ___ of today\'s meeting is to discuss the project brief."',word:'purpose',opts:['purpose','reason','goal','topic'],
+   exp:'"The purpose of today\'s meeting is to..." sets the agenda clearly in professional English.'},
+  {type:'fill',prompt:'"As you can see ___ this slide, sales increased 30%."',word:'in',opts:['in','on','at','from'],
+   exp:'"As you can see IN this slide" is the standard phrase for referring to slide content during a presentation.'},
+  {type:'choice',prompt:'How do you POLITELY disagree in a meeting?',word:'I see your point, but I would suggest...',opts:['You are wrong.','I see your point, but I would suggest...','That is a bad idea.','No, I disagree.'],
+   exp:'"I see your point, but..." acknowledges the other person first, then offers an alternative. This is the professional way to disagree.'},
+  {type:'choice',prompt:'How do you invite questions at the END of a presentation?',word:'I am happy to take any questions now.',opts:['Any questions?','I am happy to take any questions now.','Does everyone understand?','Stop asking me.'],
+   exp:'"I am happy to take any questions now" is polite and professional. "Any questions?" alone is too informal.'},
+  {type:'build',structure:'Opening + Topic + Scope',
+   parts:[{l:'Opening',v:'Today'},{l:'Verb',v:'I will present'},{l:'Topic',v:'our design proposal'}],
+   tiles:['Today','I','will','present','our','design','proposal','show','discuss'],
+   answer:'Today I will present our design proposal',
+   exp:'Today (Time) + I will present (Future verb) + our design proposal (Topic) = presentation opening sentence.'}
+]},
+
+'esp2c':{id:'esp2c',icon:'&#128196;',title:'Giving Instructions',sub:'Modal verbs for professional directions',level:[],
+theory:[
+  {type:'intro',
+   title:'ESP2C — Instructions and Requests',
+   body:'In design projects, you often need to give directions to your team or instructions to clients. Modal verbs like can, could, should and must change the level of politeness and obligation.',
+   es:'En proyectos de diseño, frecuentemente necesitas dar instrucciones a tu equipo o directrices a los clientes. Los verbos modales cambian el nivel de cortесía y obligación.'},
+  {type:'table-2col',title:'Modal Verbs for Instructions',
+   cols:['Modal','Use','Example'],
+   rows:[
+    {c1:'Must / Have to',c2:'Strong obligation',c3:'You must submit the final file by Friday.'},
+    {c1:'Should',c2:'Recommendation',c3:'You should use a high-resolution image.'},
+    {c1:'Could',c2:'Polite request',c3:'Could you review the draft by tomorrow?'},
+    {c1:'Can',c2:'Ability / informal request',c3:'Can you send me the updated version?'},
+    {c1:'Need to',c2:'Necessity',c3:'We need to revise the color palette.'}
+   ]},
+  {type:'notes',title:'Important patterns',
+   items:['Make sure + you/the team + verb: "Make sure you save the file in PDF format."',
+          'Remember to + verb: "Remember to include your name on the cover page."',
+          'Please + verb: "Please send your feedback before Thursday."',
+          'I suggest + noun/gerund: "I suggest starting with user research."',
+          'Avoid + gerund: "Avoid using more than three fonts in one layout."'],
+   es:'Make sure = Asegúrate, Remember to = Recuerda, I suggest = Sugiero, Avoid = Evita. Estos patrones son muy útiles para dar instrucciones claras en inglés profesional.'},
+  {type:'examples',title:'Project Instructions',items:[
+    {en:'You must submit the final files in PDF and AI format.',es:'Debes entregar los archivos finales en formato PDF y AI.'},
+    {en:'Could you review the mockups and send your feedback?',es:'¿Podrías revisar los mockups y enviar tu retroalimentación?'},
+    {en:'I suggest starting with a user journey map before sketching.',es:'Sugiero comenzar con un mapa de experiencia de usuario antes de bocetar.'},
+    {en:'Please avoid using more than three typefaces in the layout.',es:'Por favor evita usar más de tres tipografías en el diseño.'}
+  ]}
+],
+exercises:[
+  {type:'fill',prompt:'___ you review the draft by tomorrow? (polite request)',word:'Could',opts:['Could','Must','Should','Have'],
+   exp:'"Could you..." is a polite way to make a request. It is softer than "Can you..." and much more professional.'},
+  {type:'fill',prompt:'You ___ submit the final file by Friday. (strong obligation)',word:'must',opts:['must','could','might','should'],
+   exp:'"Must" expresses strong obligation. Use it for non-negotiable deadlines or requirements.'},
+  {type:'fill',prompt:'I ___ starting with user research before ideation.',word:'suggest',opts:['suggest','recommend','think','say'],
+   exp:'"I suggest + gerund (starting)" is a common professional phrase for making recommendations.'},
+  {type:'choice',prompt:'Which sentence is the most POLITE request?',word:'Could you please send the updated files?',opts:['Send the files.','Can you send the files?','You should send the files.','Could you please send the updated files?'],
+   exp:'"Could you please..." is the most polite form. "Please" adds extra courtesy. Always use this with clients.'},
+  {type:'choice',prompt:'"Avoid using more than three fonts." The word AVOID means:',word:'Do not use',opts:['Always use','Try to use','Do not use','You must use'],
+   exp:'"Avoid + gerund" means "do not do this thing." It is a recommendation to stay away from something.'},
+  {type:'build',structure:'Modal + Subject + Verb + Object',
+   parts:[{l:'Modal',v:'Could'},{l:'Subject',v:'you'},{l:'Verb',v:'review'},{l:'Object',v:'the draft'}],
+   tiles:['Could','you','review','the','draft','send','update','should'],
+   answer:'Could you review the draft',
+   exp:'Could (Modal) + you (Subject) + review (Verb) + the draft (Object) = polite professional request.'}
+]},
+
+'esp3a':{id:'esp3a',icon:'&#128196;',title:'CV & Cover Letter',sub:'Writing your professional profile in English',level:[],
+theory:[
+  {type:'intro',
+   title:'ESP3A — CV and Cover Letter',
+   body:'Your CV (Curriculum Vitae) and cover letter are your first impression with a potential employer. In English, they follow specific formats and use strong action verbs to describe your experience.',
+   es:'Tu CV y carta de presentación son tu primera impresión ante un empleador potencial. En inglés siguen formatos específicos y usan verbos de acción potentes.'},
+  {type:'table-2col',title:'CV Sections',
+   cols:['Section','What to include'],
+   rows:[
+    {c1:'Contact Information',c2:'Name, email, phone, LinkedIn, portfolio URL'},
+    {c1:'Objective / Profile',c2:'2-3 sentences about your goals and strengths'},
+    {c1:'Education',c2:'Degree, institution, graduation year'},
+    {c1:'Experience',c2:'Job title, company, dates, key achievements'},
+    {c1:'Skills',c2:'Software, languages, tools (e.g. Adobe Suite, AutoCAD)'},
+    {c1:'Portfolio',c2:'Link to your online portfolio or attached PDF'}
+   ]},
+  {type:'notes',title:'CV Action Verbs',
+   items:['designed — designed a modular furniture line for residential use',
+          'developed — developed brand identity for 5 clients',
+          'managed — managed a team of 3 junior designers',
+          'collaborated — collaborated with engineers to refine prototypes',
+          'presented — presented design proposals to stakeholders'],
+   es:'Los verbos de acción describen tus logros de forma impactante: designed = diseñé, developed = desarrollé, managed = gestioné, collaborated = colaboré, presented = presenté.'},
+  {type:'examples',title:'CV and Cover Letter Sentences',items:[
+    {en:'I designed a modular shelving system for a residential client.',es:'Diseñé un sistema modular de estantería para un cliente residencial.'},
+    {en:'I am writing to apply for the position of Junior Designer.',es:'Escribo para postularme al cargo de Diseñador/a Junior.'},
+    {en:'I am a recent graduate with strong skills in product design and 3D modeling.',es:'Soy recién egresado/a con sólidas habilidades en diseño de productos y modelado 3D.'},
+    {en:'My portfolio demonstrates my ability to solve real-world design challenges.',es:'Mi portafolio demuestra mi capacidad para resolver desafíos de diseño del mundo real.'}
+  ]}
+],
+exercises:[
+  {type:'fill',prompt:'I am writing to ___ for the position of Junior Designer.',word:'apply',opts:['apply','ask','request','write'],
+   exp:'"I am writing to apply for the position of..." is the standard opening for a cover letter.'},
+  {type:'fill',prompt:'In a CV, use action verbs like "I ___ a brand identity for 5 clients."',word:'developed',opts:['developed','made','did','put'],
+   exp:'"Developed" is a strong action verb. CVs use past tense action verbs to describe achievements.'},
+  {type:'fill',prompt:'"My portfolio ___ my ability to solve design challenges."',word:'demonstrates',opts:['demonstrates','shows','tells','says'],
+   exp:'"Demonstrates" is more professional than "shows." Use it in cover letters to highlight your portfolio.'},
+  {type:'choice',prompt:'Which section describes your GOALS and STRENGTHS in 2-3 sentences?',word:'Objective / Profile',opts:['Education','Skills','Objective / Profile','Experience'],
+   exp:'The "Objective" or "Profile" section gives a brief summary of who you are and what you bring to the role.'},
+  {type:'choice',prompt:'A cover letter MUST be:',word:'Concise — ideally one page',opts:['As long as possible','A copy of your CV','Concise — ideally one page','More than two pages'],
+   exp:'A good cover letter is concise and focused — ideally one page. Longer letters lose the reader\'s attention.'},
+  {type:'build',structure:'Subject + Verb + Object + Prep phrase',
+   parts:[{l:'Subject',v:'I'},{l:'Verb',v:'managed'},{l:'Object',v:'a team'},{l:'Prep',v:'of 3 designers'}],
+   tiles:['I','managed','a','team','of','3','designers','junior','led'],
+   answer:'I managed a team of 3 designers',
+   exp:'I (Subject) + managed (CV verb) + a team (Object) + of 3 designers (Detail) = strong CV bullet point.'}
+]},
+
+'esp3b':{id:'esp3b',icon:'&#128247;',title:'Portfolio & Skills',sub:'Talking about your work in English',level:[],
+theory:[
+  {type:'intro',
+   title:'ESP3B — Describing Your Portfolio',
+   body:'A design portfolio shows your best work. Being able to explain each project in English — the brief, process, and outcome — is essential for international clients and job applications.',
+   es:'Un portafolio de diseño muestra tu mejor trabajo. Poder explicar cada proyecto en inglés — el brief, el proceso y el resultado — es esencial para clientes internacionales y postulaciones.'},
+  {type:'table-2col',title:'Describing a Project',
+   cols:['What to say','Example phrase'],
+   rows:[
+    {c1:'The brief / context',c2:'This project was a brief from a furniture company.'},
+    {c1:'The challenge',c2:'The main challenge was designing for small spaces.'},
+    {c1:'Your process',c2:'I began with user research and sketching.'},
+    {c1:'Your solution',c2:'The result is a modular system that adapts to any room.'},
+    {c1:'The outcome',c2:'The client was very satisfied with the final design.'},
+    {c1:'Your role',c2:'I was responsible for the concept and 3D modeling.'}
+   ]},
+  {type:'notes',title:'Useful Vocabulary',
+   items:['work in progress — a project not yet finished',
+          'final deliverable — the completed output you hand to the client',
+          'design rationale — the reasons behind your design decisions',
+          'aesthetic — relating to beauty and visual appearance',
+          'functional — working correctly and serving its purpose'],
+   es:'work in progress = trabajo en proceso, final deliverable = entregable final, design rationale = justificación del diseño, aesthetic = estético, functional = funcional.'},
+  {type:'examples',title:'Portfolio Presentation',items:[
+    {en:'This project was a brief from a sustainable packaging company.',es:'Este proyecto fue un brief de una empresa de empaques sustentables.'},
+    {en:'I was responsible for the concept, sketching, and 3D modeling.',es:'Fui responsable del concepto, boceto y modelado 3D.'},
+    {en:'The design rationale was based on ergonomics and material efficiency.',es:'La justificación del diseño se basó en ergonoma y eficiencia de materiales.'},
+    {en:'The final deliverable was a set of technical drawings and a physical prototype.',es:'El entregable final fue un set de planos técnicos y un prototipo físico.'}
+  ]}
+],
+exercises:[
+  {type:'fill',prompt:'"This project was a ___ from a packaging company."',word:'brief',opts:['brief','job','task','work'],
+   exp:'"Brief" is the standard word for a design assignment from a client. Always use it when describing projects.'},
+  {type:'fill',prompt:'"I was ___ for the concept and 3D modeling."',word:'responsible',opts:['responsible','in charge','doing','making'],
+   exp:'"I was responsible for..." is the professional phrase for describing your role in a project.'},
+  {type:'fill',prompt:'The completed output you give the client is the final ___.',word:'deliverable',opts:['deliverable','product','item','work'],
+   exp:'"Final deliverable" is professional vocabulary for the completed work handed to the client at project end.'},
+  {type:'choice',prompt:'What is a "design rationale"?',word:'The reasons behind your design decisions',opts:['A type of font','The cost of a project','The reasons behind your design decisions','A client review meeting'],
+   exp:'"Design rationale" explains WHY you made specific decisions — why you chose a material, shape, color, or layout.'},
+  {type:'choice',prompt:'Which phrase describes a project NOT yet finished?',word:'work in progress',opts:['final deliverable','design rationale','work in progress','aesthetic choice'],
+   exp:'"Work in progress" (WIP) means the project is still being developed and not yet complete.'},
+  {type:'build',structure:'Subject + Verb + Object + Prep phrase',
+   parts:[{l:'Subject',v:'I'},{l:'Verb',v:'began'},{l:'Object',v:'with user research'},{l:'Then',v:'and sketching'}],
+   tiles:['I','began','with','user','research','and','sketching','started','ended'],
+   answer:'I began with user research and sketching',
+   exp:'I (Subject) + began (Verb) + with user research (Method) + and sketching (Addition) = process description.'}
+]},
+
+'esp3c':{id:'esp3c',icon:'&#128084;',title:'Job Interviews',sub:'Questions, answers and professional tone',level:[],
+theory:[
+  {type:'intro',
+   title:'ESP3C — Job Interview English',
+   body:'Job interviews in English require specific vocabulary and structures. Knowing how to answer common questions confidently and professionally will help you stand out as a design candidate.',
+   es:'Las entrevistas de trabajo en inglés requieren vocabulario y estructuras específicas. Saber cómo responder preguntas comunes con confianza y profesionalismo te ayudará a destacar.'},
+  {type:'table-2col',title:'Common Interview Questions',
+   cols:['Question','What they want to know'],
+   rows:[
+    {c1:'Tell me about yourself.',c2:'Your background, skills and goals (2 min max)'},
+    {c1:'Why do you want this role?',c2:'Your motivation and research about the company'},
+    {c1:'What are your strengths?',c2:'Skills relevant to the job + concrete example'},
+    {c1:'Describe a design challenge you solved.',c2:'Problem-solving ability and design process'},
+    {c1:'Where do you see yourself in 5 years?',c2:'Ambition, loyalty, and career planning'},
+    {c1:'What is your expected salary?',c2:'Market knowledge and negotiation confidence'}
+   ]},
+  {type:'notes',title:'Interview Phrases',
+   items:['Starting your answer: "That\'s a great question. I would say..."',
+          'Giving an example: "For instance, in my last project..."',
+          'Explaining a strength: "One of my key strengths is..."',
+          'Asking for clarification: "Could you clarify what you mean by...?"',
+          'Closing: "I am very excited about this opportunity."'],
+   es:'Frases de entrevista: That\'s a great question = Es una gran pregunta, For instance = Por ejemplo, One of my key strengths = Una de mis fortalezas clave, I am very excited = Estoy muy entusiasmado/a.'},
+  {type:'examples',title:'Sample Answers',items:[
+    {en:'I am a junior industrial designer with a strong focus on sustainable materials.',es:'Soy diseñador/a industrial junior con un enfoque sólido en materiales sustentables.'},
+    {en:'One of my key strengths is my ability to work well under pressure.',es:'Una de mis fortalezas clave es mi capacidad para trabajar bien bajo presión.'},
+    {en:'For instance, in my last project I had to redesign the product in 48 hours.',es:'Por ejemplo, en mi último proyecto tuve que rediseñar el producto en 48 horas.'},
+    {en:'I am very excited about this opportunity to join your design team.',es:'Estoy muy entusiasmado/a por esta oportunidad de unirme a su equipo de diseño.'}
+  ]}
+],
+exercises:[
+  {type:'fill',prompt:'"One of my key ___ is my ability to work under pressure."',word:'strengths',opts:['strengths','qualities','things','skills'],
+   exp:'"Key strengths" is the professional phrase. "Strengths" = things you do very well that are relevant to the job.'},
+  {type:'fill',prompt:'"For ___, in my last project I redesigned the product in 48 hours."',word:'instance',opts:['instance','example','one','case'],
+   exp:'"For instance" and "for example" both introduce concrete examples. "For instance" is slightly more formal.'},
+  {type:'fill',prompt:'To close the interview: "I am very ___ about this opportunity."',word:'excited',opts:['excited','happy','good','ok'],
+   exp:'"I am very excited about this opportunity" is a strong, enthusiastic closing that shows genuine interest.'},
+  {type:'choice',prompt:'When asked "Tell me about yourself", you should:',word:'Give a 2-minute professional summary of your background and goals.',opts:['Talk about your personal life.','Read your CV aloud.','Give a 2-minute professional summary of your background and goals.','Say you have no experience.'],
+   exp:'"Tell me about yourself" expects a structured 2-minute answer: who you are, your experience, and your goals.'},
+  {type:'choice',prompt:'How do you ask for clarification POLITELY in an interview?',word:'Could you clarify what you mean by that?',opts:['What?','I do not understand.','Could you clarify what you mean by that?','Can you repeat?'],
+   exp:'"Could you clarify what you mean by...?" is polite and professional. It shows you are listening carefully.'},
+  {type:'build',structure:'Topic + Strength + Example',
+   parts:[{l:'Claim',v:'One of my key strengths'},{l:'Verb',v:'is'},{l:'Object',v:'working under pressure'}],
+   tiles:['One','of','my','key','strengths','is','working','under','pressure','stress'],
+   answer:'One of my key strengths is working under pressure',
+   exp:'One of my key strengths (Claim) + is (Verb) + working under pressure (Strength) = strong interview answer.'}
+]},
+
 };
 
 // ══════════════════════════════════════
@@ -2600,107 +3155,382 @@ function showDone(){
       <div style="font-size:1.4rem;margin-bottom:6px">🔗</div>
       <div style="font-size:.88rem;font-weight:800;margin-bottom:4px">¿Quieres más?</div>
       <div style="font-size:.75rem;color:var(--text2);margin-bottom:12px">Luna Native Track tiene 3 módulos completos: Collocations Lab, Register Switcher y más.</div>
-      <a href="luna_native_track_v2.html" style="display:inline-block;background:linear-gradient(90deg,#7c6af7,#5cc8ff);color:#fff;text-decoration:none;padding:8px 20px;border-radius:20px;font-size:.8rem;font-weight:700">Ir a Luna Native Track →</a>
+      <button onclick="window.open('luna_native_track_v2.html')" style="background:linear-gradient(90deg,#7c6af7,#5cc8ff);color:#fff;padding:9px 18px;border-radius:10px;font-size:.82rem;font-weight:700;border:none;cursor:pointer">Ver Luna Native Track →</button>
     </div>`:'';
+  const star=pct>=90?'🌟':pct>=70?'✅':'🔄';
   el.innerHTML=`<div class="ex-done" style="display:flex">
-    <h3>&#127881; &#161;Lecci&#243;n completada!</h3>
-    <div class="ex-done-score">${exScore}/${exTotal}</div>
-    <p>${pct>=70?'&#127775; &#161;Excelente trabajo!':'&#127775; &#161;Sigue practicando!'}</p>
+    <div style="font-size:2.5rem">${star}</div>
+    <h3>${pct>=90?'¡Perfecto!':pct>=70?'¡Muy bien!':'¡Sigue practicando!'}</h3>
+    <div class="ex-done-score">${pct}%</div>
+    <p style="font-size:.84rem;color:var(--text2)">${exScore} de ${exTotal} correctas</p>
     ${nativeCTA}
-    <div style="display:flex;gap:10px;margin-top:10px">
-      <button class="btn-r" onclick="openLesson(currentLesson.id)">&#128260; Repetir</button>
-      <button class="btn-p" onclick="goTo('s-lessons')">Lecciones &#8594;</button>
+    <div style="display:flex;gap:10px;margin-top:8px">
+      <button class="btn-r" onclick="restartEx()">↩ Repetir</button>
+      <button class="btn-p" onclick="goTo('s-lessons')">✓ Listo</button>
     </div>
   </div>`;
 }
 
-// ══════════════════════════════════════
-// BUILDER
-// ══════════════════════════════════════
-function selectTile(idx,word,btn){
-  if(btn.classList.contains('used')) return;
-  btn.classList.add('used');
-  bldChosen.push({idx,word});
-  const sent=document.getElementById('bld-sent');
-  if(sent){
-    const ph=sent.querySelector('.bld-ph');
-    if(ph) ph.remove();
-    const chip=document.createElement('button');
-    chip.className='bld-chip';
-    chip.textContent=word;
-    chip.onclick=()=>{
-      const i=bldChosen.findIndex(c=>c.idx===idx);
-      if(i>=0) bldChosen.splice(i,1);
-      chip.remove();
-      const tile=document.getElementById('btile-'+idx);
-      if(tile) tile.classList.remove('used');
-      if(!sent.children.length) sent.innerHTML='<span class="bld-ph">Toca las palabras en orden para construir la oraci&#243;n</span>';
-    };
-    sent.appendChild(chip);
+function restartEx(){
+  exIdx=0;exScore=0;currentItem=null;bldChosen=[];bldTiles=[];
+  switchTab('practice');
+}
+
+// ══════════════════════════════════════════════════════════════════
+// ESP115 GAMES DATA
+// ══════════════════════════════════════════════════════════════════
+const ESP_GAMES = {
+  A1:{
+    id:'A1', emoji:'🌱', title:'Vocabulario Básico', color:'#00e5be',
+    desc:'Conceptos fundamentales del ESP115',
+    questions:[
+      {type:'mcq',q:'An industrial/product designer typically creates:',opts:['Roads and highways','Furniture, cars and home appliances','Email systems','Project reports'],correct:1,hint:'Industrial designers focus on functional objects like furniture, vehicles and home appliances.'},
+      {type:'tf',q:'Both industrial and environmental designers aim to improve people\'s lifestyles.',answer:true,hint:'Correct! Discovering needs and improving lifestyles is the shared goal of both types.'},
+      {type:'mcq',q:'How long should an elevator pitch be?',opts:['5 minutes','30 minutes','About 60 seconds','10 minutes'],correct:2,hint:'An elevator pitch = roughly one elevator ride = about 60 seconds. Keep it short!'},
+      {type:'tf',q:'A business card needs to include your full address and fax number.',answer:false,hint:'False! At minimum you only need your name and ONE contact method (phone or email).'},
+      {type:'mcq',q:'What is the FIRST step of the design process?',opts:['Production','Testing','Finding solutions','Define the problem'],correct:3,hint:'You can\'t solve what you haven\'t defined! Always start by clearly defining the problem.'},
+      {type:'mcq',q:'What is the LAST step of the design process?',opts:['Documentation','Define the problem','Testing','Production'],correct:3,hint:'Production is the final step — you\'ve defined, brainstormed, documented, tested, and now you build!'},
+      {type:'tf',q:'Environmental designers work mainly on furniture and cars.',answer:false,hint:'False! That\'s industrial designers. Environmental designers focus on architecture and urban planning.'},
+      {type:'mcq',q:'Standard business card size:',opts:['A4 (21×29.7cm)','8.9cm × 5cm','15cm × 10cm','A6 (10×14.8cm)'],correct:1,hint:'Standard business card = 8.9cm × 5cm — fits perfectly in a card holder!'},
+      {type:'mcq',q:'In SMART objectives, "S" stands for:',opts:['Special','Specific','Simple','Strategic'],correct:1,hint:'S = Specific: What are you going to do? Who is it for?'},
+      {type:'tf',q:'An elevator pitch should be different for different audiences.',answer:true,hint:'Correct! Adapt your pitch: a job fair pitch ≠ a networking event pitch.'}
+    ]
+  },
+  A2:{
+    id:'A2', emoji:'📞', title:'Frases del Trabajo', color:'#00d4ff',
+    desc:'Vocabulario y frases profesionales básicas',
+    questions:[
+      {type:'mcq',q:'Complete: "Good ___, ladies and gentlemen."',opts:['morning','afternoon','night','evening'],correct:1,hint:'"Good afternoon, ladies and gentlemen" — the classic formal presentation opener.'},
+      {type:'mcq',q:'Complete the phone phrase: "Could I ___ a message?"',opts:['leave','make','take','give'],correct:2,hint:'"Can I TAKE a message?" — the receptionist takes the message to pass it on.'},
+      {type:'tf',q:'"Hi everyone!" is a formal presentation phrase.',answer:false,hint:'False! "Hi everyone" is informal. Formal: "Good afternoon, ladies and gentlemen."'},
+      {type:'mcq',q:'In a formal email, what comes FIRST?',opts:['State your purpose','Add closing remarks','Begin with a greeting','Thank the recipient'],correct:2,hint:'Always start with a greeting (Dear Mr./Ms. [Name]), then thank, then state purpose.'},
+      {type:'mcq',q:'Complete: "I\'m afraid he is not ___."',opts:['here right now','available','in the office','ready'],correct:1,hint:'"I\'m afraid he is not available" — "I\'m afraid" softens the bad news politely.'},
+      {type:'mcq',q:'In SMART objectives, "M" stands for:',opts:['Manageable','Modern','Measurable','Multiple'],correct:2,hint:'M = Measurable: How many? How much? How long? You need numbers to track progress!'},
+      {type:'tf',q:'You should start a formal email with "Hey!"',answer:false,hint:'False! "Hey!" is very informal. Formal emails start with "Dear Mr./Ms. [Name],"'},
+      {type:'mcq',q:'In SMART objectives, "T" stands for:',opts:['Technical','Team-based','Transferable','Time Based'],correct:3,hint:'T = Time Based: When will it be finished? Deadlines make goals real!'},
+      {type:'tf',q:'The SECOND step when writing an email is to state your main purpose.',answer:false,hint:'False! Step 2 is to THANK the recipient. Purpose comes third.'},
+      {type:'mcq',q:'"Good afternoon, ladies and gentlemen" is:',opts:['Informal language','Rude language','Formal language','Neutral language'],correct:2,hint:'This is a classic formal opening for presentations and speeches.'}
+    ]
+  },
+  B1:{
+    id:'B1', emoji:'💬', title:'Inglés Profesional', color:'#a855f7',
+    desc:'Reuniones, email y presentaciones',
+    questions:[
+      {type:'mcq',q:'A "kick-off meeting" is held:',opts:['At the end of a project','Monthly by all staff','At the START of a new project','Weekly by managers'],correct:2,hint:'Kick-off = beginning! You "kick off" a project by holding a meeting to align the team.'},
+      {type:'mcq',q:'Step 3 of the design process (out of 5) is:',opts:['Testing','Production','Documentation of ideas','Define the problem'],correct:2,hint:'1.Define problem → 2.Find solutions → 3.Documentation → 4.Testing → 5.Production'},
+      {type:'mcq',q:'Which meeting type is specifically for generating new ideas?',opts:['Board meeting','Team meeting','Progress meeting','Brainstorming'],correct:3,hint:'Brainstorming sessions exist specifically to generate creative new ideas without judgment.'},
+      {type:'tf',q:'In an elevator pitch, you should use technical jargon with everyone.',answer:false,hint:'False! Know your audience. Not everyone knows design terms — adapt your language!'},
+      {type:'mcq',q:'A "progress meeting" is about:',opts:['Future plans only','What has been accomplished so far','Hiring new staff','Introducing the project'],correct:1,hint:'Progress meetings = "Where are we?" — reviewing what has already been done.'},
+      {type:'mcq',q:'Who typically attends a "board meeting"?',opts:['All company staff','New employees','Senior managers','External clients only'],correct:2,hint:'Board meetings are for a company\'s most senior managers — the board of directors.'},
+      {type:'mcq',q:'In SMART, "A = Area Specific" means:',opts:['The goal must be attainable','Where you will implement the project','Who the audience is','The action plan'],correct:1,hint:'A = Where? This specifies the geographic or organizational scope of your objective.'},
+      {type:'tf',q:'The SECOND step in writing a formal email is to thank the recipient.',answer:true,hint:'Correct! 1.Greeting → 2.Thank → 3.State purpose → 4.Closing remarks → 5.Sign-off'},
+      {type:'mcq',q:'In SMART, "R = Realistic" means:',opts:['The goal must be written down','How achievable is it?','Who is responsible?','When will it be reviewed?'],correct:1,hint:'R = Realistic/Achievable: Can you actually accomplish this with available resources?'},
+      {type:'tf',q:'In a progress meeting, you discuss what has been accomplished on a project.',answer:true,hint:'Correct! Progress meetings = status updates on completed or ongoing work.'}
+    ]
+  },
+  B2:{
+    id:'B2', emoji:'🔥', title:'Carrera Profesional', color:'#f97316',
+    desc:'CV, cover letter y elevator pitch',
+    questions:[
+      {type:'mcq',q:'Many employers spend ___ reading each job application.',opts:['5 minutes','10 minutes','An hour','Thirty seconds'],correct:3,hint:'30 seconds! That\'s why your cover letter must grab attention immediately.'},
+      {type:'tf',q:'You should try to be funny in a professional cover letter.',answer:false,hint:'False! Humor is risky in cover letters — it can seem unprofessional. Stay focused and clear.'},
+      {type:'mcq',q:'"Key Skills" in a CV contains:',opts:['Academic degrees','Job-related abilities','Your hobbies','Salary expectations'],correct:1,hint:'Key Skills = competencies relevant to the job: software, languages, technical abilities.'},
+      {type:'mcq',q:'When should you send a follow-up letter after applying?',opts:['The same day','After 5 minutes','A week or two later (no response)','Never — it looks desperate'],correct:2,hint:'1-2 weeks is polite. It shows initiative without being pushy.'},
+      {type:'tf',q:'References in a CV are people who can confirm the quality of your work.',answer:true,hint:'Correct! References vouch for your professional performance and personal character.'},
+      {type:'mcq',q:'"Qualifications" in a CV includes:',opts:['Hobbies and interests','Salary history','Academic degrees and diplomas','Friends and family'],correct:2,hint:'Qualifications = formal education: degrees, certificates, diplomas, professional titles.'},
+      {type:'mcq',q:'A design portfolio should prioritize:',opts:['Everything you\'ve ever created','Quality over quantity','Only digital work','Only drawings'],correct:1,hint:'Quality over quantity! Employers remember your best piece, not your longest list.'},
+      {type:'tf',q:'A longer cover letter is always more impressive to employers.',answer:false,hint:'False! Keep it concise — one page max. Employers spend 30 seconds reading. Don\'t waste their time.'},
+      {type:'mcq',q:'The CV "Objective" section is:',opts:['A list of your jobs','A convincing statement about why you\'re applying','Your references list','Your qualifications'],correct:1,hint:'Objective = "Why should we hire YOU?" — a short, powerful statement at the top of your CV.'},
+      {type:'mcq',q:'An elevator pitch should be:',opts:['As detailed as possible','The same for every audience','Brief and adapted to the audience','Memorized word-for-word'],correct:2,hint:'Brief, flexible, and tailored! Know your audience and what matters to THEM.'}
+    ]
+  },
+  C1:{
+    id:'C1', emoji:'⚡', title:'Maestro del Registro', color:'#f59e0b',
+    desc:'Registro formal/informal y entrevistas de trabajo',
+    questions:[
+      {type:'mcq',q:'"Please, take a seat." — in a job interview, who says this?',opts:['The applicant','The interviewer','Both','Neither'],correct:1,hint:'The INTERVIEWER welcomes the applicant and offers a seat — they control the setting.'},
+      {type:'mcq',q:'"What\'s the salary for this position?" — who says this?',opts:['The interviewer','The receptionist','The applicant','The manager'],correct:2,hint:'The APPLICANT asks about salary — they want to know what they\'re getting into.'},
+      {type:'mcq',q:'"I suggest that we begin." — this is:',opts:['Informal language','Rude','Formal language','Incorrect English'],correct:2,hint:'FORMAL — "I suggest that..." is a polished, professional structure. Informal: "OK, let\'s start!"'},
+      {type:'mcq',q:'"OK, shall we get started?" — this is:',opts:['Formal','Rude','Incorrect','Informal'],correct:3,hint:'INFORMAL — casual and friendly. Formal equivalent: "I suggest that we begin."'},
+      {type:'tf',q:'When asked "Tell me about yourself", you should give a detailed 10-minute life story.',answer:false,hint:'False! Give a 60-second professional summary — your elevator pitch. Keep it relevant to the job.'},
+      {type:'mcq',q:'"I\'m afraid he is not available" — "I\'m afraid" is used to:',opts:['Express fear','Make an excuse','Soften bad news','Confirm information'],correct:2,hint:'Classic British politeness! "I\'m afraid" = "Unfortunately..." — softens disappointing news.'},
+      {type:'tf',q:'"It is a pleasure to welcome you today" is an informal phrase.',answer:false,hint:'False! This is FORMAL language. Informal: "It\'s great to see you here!"'},
+      {type:'mcq',q:'"We will be in touch soon." — in an interview, who says this?',opts:['The applicant','Both','The interviewer','Neither'],correct:2,hint:'The INTERVIEWER says this at the end to let the applicant know they\'ll receive feedback.'},
+      {type:'tf',q:'"Good afternoon, ladies and gentlemen" is an informal greeting.',answer:false,hint:'False! This is highly FORMAL — perfect for presentations, conferences and formal events.'},
+      {type:'mcq',q:'"Do you have any questions for us?" — in an interview, who says this?',opts:['The applicant','The interviewer','The receptionist','Both'],correct:1,hint:'The INTERVIEWER offers this at the end. Always have 2-3 thoughtful questions ready!'}
+    ]
+  }
+};
+
+// Master = 3 questions from each level
+ESP_GAMES.MASTER = {
+  id:'MASTER', emoji:'👑', title:'ESP115 Maestro', color:'#e879f9',
+  desc:'Mezcla de todos los niveles',
+  questions: [
+    // From A1
+    ESP_GAMES.A1.questions[0],
+    ESP_GAMES.A1.questions[2],
+    ESP_GAMES.A1.questions[5],
+    // From A2
+    ESP_GAMES.A2.questions[1],
+    ESP_GAMES.A2.questions[3],
+    ESP_GAMES.A2.questions[6],
+    // From B1
+    ESP_GAMES.B1.questions[0],
+    ESP_GAMES.B1.questions[2],
+    ESP_GAMES.B1.questions[5],
+    // From B2
+    ESP_GAMES.B2.questions[0],
+    ESP_GAMES.B2.questions[2],
+    ESP_GAMES.B2.questions[6],
+    // From C1
+    ESP_GAMES.C1.questions[0],
+    ESP_GAMES.C1.questions[3],
+    ESP_GAMES.C1.questions[8]
+  ]
+
+};
+
+// ══════════════════════════════════════════════════════════════════
+// ESP115 HOME SECTION
+// ══════════════════════════════════════════════════════════════════
+
+// ══════════════════════════════════════════════════════════════════
+// ESP115 MODULE LESSONS RENDERER
+// ══════════════════════════════════════════════════════════════════
+const ESP_MODS=[
+  {id:'mod1',num:'Módulo 1',name:'Design Facts',color:'#4f8ef7',
+   lessons:[
+    {id:'esp1a',icon:'&#127912;',label:'ESP1A',title:'Types of Designers'},
+    {id:'esp1b',icon:'&#128295;',label:'ESP1B',title:'The Design Process'},
+    {id:'esp1c',icon:'&#128221;',label:'ESP1C',title:'Design Vocabulary'}
+   ]},
+  {id:'mod2',num:'Módulo 2',name:'Job Interaction',color:'#00e5be',
+   lessons:[
+    {id:'esp2a',icon:'&#128222;',label:'ESP2A',title:'Phone & Email'},
+    {id:'esp2b',icon:'&#128101;',label:'ESP2B',title:'Meetings & Presentations'},
+    {id:'esp2c',icon:'&#128196;',label:'ESP2C',title:'Giving Instructions'}
+   ]},
+  {id:'mod3',num:'Módulo 3',name:'Personal Marketing',color:'#f59e0b',
+   lessons:[
+    {id:'esp3a',icon:'&#128196;',label:'ESP3A',title:'CV & Cover Letter'},
+    {id:'esp3b',icon:'&#128247;',label:'ESP3B',title:'Portfolio & Skills'},
+    {id:'esp3c',icon:'&#128084;',label:'ESP3C',title:'Job Interviews'}
+   ]}
+];
+
+function renderEspModules(){
+  const wrap=document.getElementById('esp-modules-wrap');
+  if(!wrap) return;
+  wrap.innerHTML=ESP_MODS.map(mod=>`
+    <div class="esp-mod-block">
+      <div class="esp-mod-hdr" style="--mc:${mod.color}">
+        <span class="esp-mod-num" style="--mc:${mod.color}">${mod.num}</span>
+        <span class="esp-mod-name">${mod.name}</span>
+      </div>
+      <div class="esp-mod-lessons">
+        ${mod.lessons.map(l=>`
+          <button class="esp-lcard" style="--mc:${mod.color}" onclick="openLesson('${l.id}')">
+            <span class="esp-lcard-icon">${l.icon}</span>
+            <span class="esp-lcard-body">
+              <span class="esp-lcard-id">${l.label}</span>
+              <span class="esp-lcard-title">${l.title}</span>
+            </span>
+          </button>`).join('')}
+      </div>
+    </div>`).join('');
+}
+function renderEspGames(){
+  const c=document.getElementById('esp-games-grid');
+  if(!c) return;
+  const ORDER=['A1','A2','B1','B2','C1','MASTER'];
+  c.innerHTML=ORDER.map(key=>{
+    const g=ESP_GAMES[key];
+    const isMaster=key==='MASTER';
+    return `<button class="esp-game-card" style="--gc:${g.color}" onclick="startEspGame('${key}')">
+      <span class="gc-emoji">${g.emoji}</span>
+      <span class="gc-level">Nivel ${isMaster?'MAESTRO':key}</span>
+      <span class="gc-title">${g.title}</span>
+      <span class="gc-desc">${g.desc}</span>
+    </button>`;
+  }).join('');
+}
+
+// ══════════════════════════════════════════════════════════════════
+// GAME ENGINE
+// ══════════════════════════════════════════════════════════════════
+let gState={game:null,qs:[],idx:0,score:0,hearts:3,streak:0,answered:false,correct:0};
+
+function shuffleArr(a){
+  for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}
+  return a;
+}
+
+function startEspGame(key){
+  const g=ESP_GAMES[key];
+  gState={game:g,qs:shuffleArr([...g.questions]),idx:0,score:0,hearts:3,streak:0,answered:false,correct:0};
+  const sm=document.getElementById('s-game');
+  if(sm) sm.style.setProperty('--gc',g.color);
+  document.getElementById('game-progress-fill').style.background=g.color;
+  goTo('s-game');
+  renderGameQuestion();
+}
+
+function exitGame(){
+  if(gState.idx>0 && !confirm('¿Salir del juego? Perderás el progreso.')) return;
+  goTo('s-level');
+}
+
+function renderGameQuestion(){
+  const {qs,idx,score,hearts,game}=gState;
+  // Hearts
+  document.getElementById('game-hearts').innerHTML='❤️'.repeat(hearts)+'🖤'.repeat(3-hearts);
+  // Score
+  document.getElementById('game-score-badge').textContent=score+' pts';
+  // Progress
+  const pct=Math.round((idx/qs.length)*100);
+  document.getElementById('game-progress-fill').style.width=pct+'%';
+  document.getElementById('game-progress-label').textContent=`Pregunta ${idx+1} de ${qs.length} · ${game.emoji} ${game.id==='MASTER'?'MAESTRO':game.id}`;
+
+  const q=qs[idx];
+  const body=document.getElementById('game-body');
+  gState.answered=false;
+
+  if(q.type==='mcq'){
+    body.innerHTML=`
+      <div class="game-question-card">
+        <div class="game-q-tag">📝 Elige la respuesta correcta</div>
+        <div class="game-q-text">${q.q}</div>
+      </div>
+      <div class="game-opts">
+        ${q.opts.map((o,i)=>`<button class="game-opt" onclick="gameAnswer(${i})">${o}</button>`).join('')}
+      </div>
+      <div class="game-hint" id="game-hint"></div>
+      <button class="game-next-btn" id="game-next" onclick="gameNext()" style="background:${game.color};color:#000">Siguiente →</button>`;
+  } else {
+    // True/False
+    body.innerHTML=`
+      <div class="game-question-card">
+        <div class="game-q-tag">👍👎 Verdadero o Falso</div>
+        <div class="game-q-text">"${q.q}"</div>
+      </div>
+      <div class="game-tf">
+        <button class="game-tf-btn t-btn" onclick="gameTF(true)">✅ True</button>
+        <button class="game-tf-btn f-btn" onclick="gameTF(false)">❌ False</button>
+      </div>
+      <div class="game-hint" id="game-hint"></div>
+      <button class="game-next-btn" id="game-next" onclick="gameNext()" style="background:${game.color};color:#000">Siguiente →</button>`;
   }
 }
 
-function clearBuild(){
-  bldChosen=[];
-  const sent=document.getElementById('bld-sent');
-  if(sent) sent.innerHTML='<span class="bld-ph">Toca las palabras en orden para construir la oraci&#243;n</span>';
-  document.querySelectorAll('.bld-tile').forEach(t=>t.classList.remove('used'));
+function gameAnswer(idx){
+  if(gState.answered) return;
+  gState.answered=true;
+  const q=gState.qs[gState.idx];
+  const correct=idx===q.correct;
+  const opts=document.querySelectorAll('.game-opt');
+  opts.forEach((el,i)=>{
+    if(i===q.correct) el.classList.add('correct');
+    else if(i===idx) el.classList.add('wrong');
+    else el.classList.add('disabled');
+  });
+  processResult(correct, q.hint);
 }
 
-function checkBuild(){
-  if(!currentItem) return;
-  const answer=bldChosen.map(c=>c.word).join(' ');
-  const correct=answer.trim().toLowerCase()===currentItem.answer.trim().toLowerCase();
-  if(correct) exScore++;
-  document.querySelectorAll('.bld-tile').forEach(t=>{t.classList.add('used');t.onclick=null;});
-  document.querySelectorAll('.bld-chip').forEach(c=>c.onclick=null);
-  const fb=document.getElementById('ex-fb');
-  const nxt=document.getElementById('ex-nxt');
-  if(fb){
-    fb.className='efb '+(correct?'correct':'wrong');
-    fb.style.display='block';
-    fb.innerHTML=(correct?'&#9989; &#161;Correcto! ':'&#10060; Incorrecto. Respuesta: <strong>'+currentItem.answer+'</strong><br>')+(currentItem.exp||'');
+function gameTF(val){
+  if(gState.answered) return;
+  gState.answered=true;
+  const q=gState.qs[gState.idx];
+  const correct=val===q.answer;
+  const btns=document.querySelectorAll('.game-tf-btn');
+  const chosen=val?btns[0]:btns[1];
+  const other=val?btns[1]:btns[0];
+  chosen.classList.add(correct?'correct':'wrong');
+  other.classList.add('dim');
+  processResult(correct, q.hint);
+}
+
+function processResult(correct, hint){
+  const hint_el=document.getElementById('game-hint');
+  if(hint_el){
+    hint_el.className='game-hint '+(correct?'ok':'bad');
+    hint_el.innerHTML=(correct?'✅ Correct! ':'❌ ')+hint;
   }
-  if(nxt) nxt.style.display='block';
-}
-
-// ══════════════════════════════════════
-// UTILS
-// ══════════════════════════════════════
-function shuffle(arr){
-  for(let i=arr.length-1;i>0;i--){
-    const j=Math.floor(Math.random()*(i+1));
-    [arr[i],arr[j]]=[arr[j],arr[i]];
+  if(correct){
+    gState.streak++;
+    const bonus=gState.streak>=3?50:0;
+    const pts=100+bonus;
+    gState.score+=pts;
+    gState.correct++;
+    document.getElementById('game-score-badge').textContent=gState.score+' pts';
+    if(gState.streak>=3){
+      const badge=document.createElement('div');
+      badge.className='streak-badge';
+      badge.textContent='🔥 ×'+gState.streak+' RACHA +50';
+      document.body.appendChild(badge);
+      setTimeout(()=>badge.remove(),1600);
+    }
+  } else {
+    gState.streak=0;
+    gState.hearts--;
+    document.getElementById('game-hearts').innerHTML='❤️'.repeat(gState.hearts)+'🖤'.repeat(3-gState.hearts);
+    if(gState.hearts<=0){
+      setTimeout(()=>showGameOver(false),800);
+      return;
+    }
   }
-  return arr;
+  const nx=document.getElementById('game-next');
+  if(nx) nx.style.display='block';
 }
 
-// ══════════════════════════════════════
-// TTS
-// ══════════════════════════════════════
-function speak(text){
-  const ta=document.createElement('textarea');
-  ta.innerHTML=text;
-  const u=new SpeechSynthesisUtterance(ta.value);
-  u.lang='en-US';u.rate=0.9;
-  speechSynthesis.cancel();
-  speechSynthesis.speak(u);
+function gameNext(){
+  gState.idx++;
+  if(gState.idx>=gState.qs.length){
+    showGameOver(true);
+  } else {
+    renderGameQuestion();
+  }
 }
 
-function speakES(text){
-  const ta=document.createElement('textarea');
-  ta.innerHTML=text;
-  const u=new SpeechSynthesisUtterance(ta.value);
-  u.lang='es-ES';u.rate=0.9;
-  speechSynthesis.cancel();
-  speechSynthesis.speak(u);
+function showGameOver(completed){
+  const {score,correct,qs,game,hearts}=gState;
+  const total=qs.length;
+  const pct=Math.round((correct/total)*100);
+  const perfect=pct===100;
+  const good=pct>=70;
+  const emoji=!completed?'💔':perfect?'🌟':good?'🏆':'🔄';
+  const title=!completed?'¡Sin vidas!':perfect?'¡PERFECTO!':good?'¡Excelente!':'¡Sigue practicando!';
+  const circ=2*Math.PI*42;
+  const dash=(pct/100)*circ;
+  const body=document.getElementById('game-body');
+  body.innerHTML=`<div class="game-over">
+    <div class="game-over-emoji">${emoji}</div>
+    <div class="game-over-title" style="color:${game.color}">${title}</div>
+    <div class="game-over-sub">${completed?correct+' de '+total+' respuestas correctas':'Se acabaron los corazones — ¡inténtalo de nuevo!'}</div>
+    <div class="game-score-ring">
+      <svg viewBox="0 0 90 90" width="110" height="110">
+        <circle cx="45" cy="45" r="42" fill="none" stroke="rgba(255,255,255,.08)" stroke-width="6"/>
+        <circle cx="45" cy="45" r="42" fill="none" stroke="${game.color}" stroke-width="6"
+          stroke-dasharray="${dash} ${circ}" stroke-linecap="round"/>
+      </svg>
+      <div class="game-score-ring-text">
+        <span class="game-score-pct" style="color:${game.color}">${pct}%</span>
+        <span class="game-score-lbl">${score} pts</span>
+      </div>
+    </div>
+    <div class="game-action-btns">
+      <button class="game-btn-primary" style="background:${game.color};color:#000" onclick="startEspGame('${game.id}')">↩ Jugar de nuevo</button>
+      <button class="game-btn-secondary" onclick="goTo('s-level')">← Volver a Niveles</button>
+    </div>
+  </div>`;
+  // Update progress bar to 100%
+  document.getElementById('game-progress-fill').style.width='100%';
 }
 
+// Render ESP games on level screen load
+renderEspGames();
+  renderEspModules();
 
-// ══════════════════════════════════════
-// INIT
-// ══════════════════════════════════════
-renderLevelList();
 </script>
 </body>
-</html>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+</html>
