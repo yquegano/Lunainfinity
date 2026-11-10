@@ -3531,6 +3531,26 @@ function showGameOver(completed){
 renderEspGames();
   renderEspModules();
 
+// ══════════════════════════════════════
+// 10 nov 2026 · Reparación: voz (botones 🔊) y ejercicio «Construye la oración»
+// Antes estas funciones se llamaban desde los botones pero no existían.
+// ══════════════════════════════════════
+function shuffle(a){return shuffleArr(a.slice());}
+const LUNA_VOICE={en:null,es:null};
+function lunaRankVoice(v){const n=(v.name||'').toLowerCase();let s=0;if(/natural|online|neural|enhanced|premium/.test(n))s+=4;if(/google|microsoft|samantha|paulina|monica/.test(n))s+=1;if(v.localService===false)s+=1;return s;}
+function lunaLoadVoices(){if(!('speechSynthesis' in window))return;const vs=speechSynthesis.getVoices();const best=pre=>vs.filter(v=>(v.lang||'').toLowerCase().startsWith(pre)).sort((a,b)=>lunaRankVoice(b)-lunaRankVoice(a))[0]||null;LUNA_VOICE.en=best('en-us')||best('en');LUNA_VOICE.es=best('es-cl')||best('es-419')||best('es-mx')||best('es-us')||best('es');}
+if('speechSynthesis' in window){lunaLoadVoices();speechSynthesis.onvoiceschanged=lunaLoadVoices;}
+function lunaClean(t){const d=document.createElement('div');d.innerHTML=String(t||'');return (d.textContent||'').replace(/\s+/g,' ').trim();}
+function lunaSay(text,lang){if(!('speechSynthesis' in window)){alertVoice();return;}const t=lunaClean(text);if(!t)return;speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t);const v=lang==='en'?LUNA_VOICE.en:LUNA_VOICE.es;if(v){u.voice=v;u.lang=v.lang;}else{u.lang=lang==='en'?'en-US':'es-CL';}u.rate=lang==='en'?0.9:1;speechSynthesis.speak(u);}
+function alertVoice(){const fb=document.getElementById('ex-fb');if(fb){fb.style.display='block';fb.className='efb wrong';fb.textContent='Este navegador no puede leer en voz alta. Prueba con Chrome, Edge o Safari.';}}
+function speak(text){lunaSay(text,'en');}
+function speakES(text){lunaSay(text,'es');}
+function lunaRenderSentence(){const box=document.getElementById('bld-sent');if(!box)return;if(!bldChosen.length){box.innerHTML='<span class="bld-ph">Toca las palabras en orden para construir la oraci&#243;n</span>';return;}box.innerHTML='';bldChosen.forEach((c,k)=>{const chip=document.createElement('span');chip.className='bld-chip';chip.textContent=c.t;chip.title='Quitar';chip.onclick=()=>{const b=document.getElementById('btile-'+c.i);if(b&&!b.disabled)b.classList.remove('used');bldChosen.splice(k,1);lunaRenderSentence();};box.appendChild(chip);});}
+function selectTile(i,t,btn){if(!btn||btn.classList.contains('used')||btn.disabled)return;btn.classList.add('used');bldChosen.push({i:i,t:t});lunaRenderSentence();}
+function clearBuild(){bldChosen=[];document.querySelectorAll('.bld-tile').forEach(b=>{if(!b.disabled)b.classList.remove('used');});lunaRenderSentence();}
+function lunaNorm(x){return String(x||'').replace(/[’‘]/g,"'").replace(/[?.!¿¡,]/g,'').replace(/\s+/g,' ').trim().toLowerCase();}
+function checkBuild(){if(!currentItem)return;if(!bldChosen.length){const fb=document.getElementById('ex-fb');if(fb){fb.style.display='block';fb.className='efb wrong';fb.textContent='Primero toca las palabras en orden.';}return;}const said=bldChosen.map(c=>c.t).join(' ');const ok=lunaNorm(said)===lunaNorm(currentItem.answer);document.querySelectorAll('.bld-tile,.bld-clear,.bld-check').forEach(b=>{b.disabled=true;});document.querySelectorAll('.bld-chip').forEach(c=>{c.onclick=null;c.style.cursor='default';});if(ok)exScore++;showFeedback(ok,(ok?'':'Respuesta correcta: <b>'+currentItem.answer+'</b>. ')+(currentItem.exp||''));if(ok)speak(currentItem.answer);}
+
 </script>
 </body>
 </html>
